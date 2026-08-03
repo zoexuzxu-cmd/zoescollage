@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zoe's Collage — Zoe Xu, stylist &amp; writer</title>
+<meta name="description" content="Zoe Xu — stylist and writer in Shanghai. Poems and prose, film criticism and festival reporting from Cannes, Berlin and London, and a lookbook built on RedNote.">
+<link rel="canonical" href="https://zoescollage.com/">
+<meta name="theme-color" content="#E8560E">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Zoe's Collage">
+<meta property="og:url" content="https://zoescollage.com/">
+<meta property="og:title" content="Zoe's Collage — Zoe Xu, stylist &amp; writer">
+<meta property="og:description" content="Poems and prose, film criticism from Cannes, Berlin and London, and a lookbook built on RedNote.">
+<meta property="og:image" content="https://zoescollage.com/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Zoe's Collage — Zoe Xu, stylist &amp; writer">
+<meta name="twitter:description" content="Poems and prose, film criticism from Cannes, Berlin and London, and a lookbook built on RedNote.">
+<meta name="twitter:image" content="https://zoescollage.com/assets/og.jpg">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* ==========================================================
+   ORANGE — the page is flooded tangerine; the content lives
+   on loose white sheets laid over it at different widths and
+   offsets, as if pinned to a coloured wall. Same sections and
+   words as the literary version, rebuilt as a paper layout.
+   ========================================================== */
+:root{
+  --flood:#E8560E;        /* tangerine ground */
+  --sheet:#FFFFFF;
+  --onflood:#1F0A02;      /* 4.88:1 on the flood — safe for body */
+  --ink:#17110C;          /* on white sheets */
+  --ink2:#5A4A3D;         /* 6.6:1 on white */
+  --deep:#C4400A;         /* 5.1:1 on white — accent for small text */
+  --rule:rgba(31,10,2,.28);
+  --pad:20px;
+  --disp:"Instrument Serif","Times New Roman",Georgia,serif;
+  --text:"Newsreader",Georgia,"Times New Roman",serif;
+  --mono:"Courier Prime",ui-monospace,"Courier New",monospace;
+}
+@media (min-width:900px){ :root{ --pad:40px; } }
+
+*,*::before,*::after{box-sizing:border-box;}
+html,body{overflow-x:clip;}
+html{-webkit-text-size-adjust:100%; scroll-behavior:smooth;}
+@media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto;} *{transition:none !important;} }
+body{
+  margin:0; background:var(--flood); color:var(--onflood);
+  font-family:var(--text); font-size:17px; line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;}
+img{display:block; max-width:100%;}
+
+.wrap{max-width:1180px; margin:0 auto; padding-left:var(--pad); padding-right:var(--pad);}
+.label{font-family:var(--mono); font-size:10.5px; font-weight:700; letter-spacing:.22em;
+  text-transform:uppercase; margin:0;}
+
+/* white sheets laid on the flood */
+.sheet{background:var(--sheet); color:var(--ink); padding:32px 24px;}
+@media (min-width:900px){ .sheet{padding:54px 52px;} }
+.sheet .label{color:var(--deep);}
+
+/* ---------- top bar ---------- */
+.topbar{padding-top:18px; padding-bottom:18px; display:flex; flex-wrap:wrap;
+  gap:10px 22px; align-items:baseline; justify-content:space-between;}
+.topbar .brand{font-family:var(--disp); font-size:22px; text-decoration:none; letter-spacing:-.01em;
+  display:inline-flex; align-items:center; gap:.26em; min-height:44px;}
+.topbar .brand em{font-style:italic;}
+.topbar nav{display:flex; flex-wrap:wrap; gap:6px 18px;}
+.topbar nav a{font-family:var(--mono); font-size:11px; font-weight:700; letter-spacing:.16em;
+  text-transform:uppercase; text-decoration:none; padding:6px 0; min-height:44px;
+  display:inline-flex; align-items:center; border-bottom:1px solid transparent;}
+.topbar nav a:hover,.topbar nav a:focus-visible{border-bottom-color:var(--onflood);}
+
+/* ---------- hero, straight on the flood ---------- */
+.hero{padding-top:26px; padding-bottom:64px;}
+.stanza{margin:18px 0 0; font-family:var(--disp); font-weight:400;
+  font-size:clamp(38px,10.4vw,112px); line-height:.98; letter-spacing:-.025em;}
+.stanza .l{display:block;}
+.stanza .i1{padding-left:.75em;}
+.stanza .i2{padding-left:1.15em;}
+.stanza em{font-style:italic; color:var(--sheet);}
+@media (min-width:900px){
+  .stanza .i1{padding-left:1.4em;}
+  .stanza .i2{padding-left:2em;}
+}
+
+.herogrid{display:grid; gap:34px; margin-top:46px;}
+@media (min-width:900px){
+  .herogrid{grid-template-columns:minmax(0,1.35fr) minmax(0,.65fr); gap:56px; align-items:end;}
+}
+.herogrid p{margin:0; max-width:46ch; font-size:18px;}
+.linkrow{display:flex; flex-wrap:wrap; gap:4px 26px; margin-top:12px;}
+.txtlink{font-family:var(--mono); font-size:11.5px; font-weight:700; letter-spacing:.16em;
+  text-transform:uppercase; text-decoration:none; border-bottom:1.5px solid var(--onflood);
+  padding-top:24px; padding-bottom:3px; display:inline-block; min-height:44px;}
+.txtlink:hover,.txtlink:focus-visible{color:var(--sheet); border-bottom-color:var(--sheet);}
+
+/* the hero photo is itself a small sheet */
+.photosheet{background:var(--sheet); padding:12px 12px 0; margin:0; max-width:320px;}
+.photosheet img{width:100%; aspect-ratio:3/4; object-fit:cover;}
+.photosheet figcaption{font-family:var(--mono); font-size:10px; font-weight:700;
+  letter-spacing:.18em; text-transform:uppercase; color:var(--ink2);
+  padding:11px 2px 13px; line-height:1.5;}
+
+/* ---------- WORDS — one wide sheet, pushed right ---------- */
+.words-sheet{margin-top:0;}
+@media (min-width:1000px){ .words-sheet{margin-left:14%;} }
+.pullquote{margin:20px 0 0; font-family:var(--disp); font-weight:400;
+  font-size:clamp(25px,3.6vw,44px); line-height:1.2; letter-spacing:-.015em;}
+.pullquote .l{display:block;}
+.pullquote .i1{padding-left:1.1em;}
+.pullquote .src{display:block; margin-top:20px; font-family:var(--mono); font-size:10.5px;
+  font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:var(--ink2);}
+.pullquote .src em{font-style:normal;}
+.cols{display:grid; gap:22px; margin-top:38px; padding-top:26px; border-top:1px solid rgba(23,17,12,.2);}
+@media (min-width:800px){ .cols{grid-template-columns:repeat(2,minmax(0,1fr)); gap:44px;} }
+.cols p{margin:0; font-size:16.5px; line-height:1.75; color:var(--ink2);}
+.cols em{font-style:italic;}
+.cols .dropcap::first-letter{
+  font-family:var(--disp); float:left; font-size:64px; line-height:.78;
+  padding:5px 10px 0 0; color:var(--deep);
+}
+.cols .txtlink{color:var(--deep); border-bottom-color:var(--deep);}
+.cols .txtlink:hover,.cols .txtlink:focus-visible{color:var(--ink); border-bottom-color:var(--ink);}
+
+/* ---------- section headers on the flood ---------- */
+.sechead{display:flex; align-items:baseline; gap:16px; padding-top:78px; padding-bottom:26px;}
+.sechead h2{font-family:var(--disp); font-weight:400; margin:0; letter-spacing:-.02em;
+  font-size:clamp(34px,6vw,66px); line-height:1;}
+.sechead .hr{flex:1; height:1px; background:var(--rule);}
+.sechead .label{white-space:nowrap;}
+
+/* ---------- WRITING — a stack of offset sheets ---------- */
+.stack{display:flex; flex-direction:column; gap:22px;}
+.entry{display:block; text-decoration:none;}
+@media (min-width:1000px){
+  .entry:nth-child(1){width:88%;}
+  .entry:nth-child(2){width:82%; margin-left:18%;}
+  .entry:nth-child(3){width:92%; margin-left:6%;}
+  .entry:nth-child(4){width:78%; margin-left:12%;}
+  .entry:nth-child(5){width:86%; margin-left:3%;}
+}
+.entry .n{font-family:var(--disp); font-style:italic; font-size:20px; color:var(--deep);}
+.entry .top{display:flex; align-items:baseline; gap:12px;}
+.entry h3{font-family:var(--disp); font-weight:400; margin:6px 0 0; letter-spacing:-.02em;
+  font-size:clamp(26px,4vw,46px); line-height:1.06;}
+.entry .meta{display:block; margin-top:12px; font-family:var(--mono); font-size:10.5px;
+  font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--ink2);}
+.entry .meta .film{color:var(--deep);}
+.entry p{margin:16px 0 0; font-size:16.5px; line-height:1.75; color:var(--ink2); max-width:62ch;}
+.entry p em{font-style:italic; color:var(--ink);}
+.entry .go{display:inline-block; margin-top:18px; font-family:var(--mono); font-size:11px;
+  font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--deep);
+  border-bottom:1.5px solid transparent; padding-bottom:2px;}
+.entry:hover .go,.entry:focus-visible .go{border-bottom-color:var(--deep);}
+.entry:hover h3,.entry:focus-visible h3{font-style:italic;}
+
+/* verse quoted inside an entry excerpt */
+.entry p .verse{font-style:italic; color:var(--ink);}
+.entry p .verse .slash{color:var(--deep); font-style:normal; padding:0 .18em;}
+
+/* ---------- STYLE — text on the flood, photos matted ---------- */
+.style-intro{display:grid; gap:26px;}
+@media (min-width:900px){ .style-intro{grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:56px;} }
+.style-intro .lead{font-size:21px; line-height:1.65; margin:0; max-width:26ch;
+  font-family:var(--disp); letter-spacing:-.01em;}
+.style-intro p{margin:0; max-width:48ch;}
+
+.looks{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; margin-top:44px;}
+@media (min-width:900px){ .looks{grid-template-columns:repeat(4,minmax(0,1fr)); gap:22px;} }
+.looks figure{margin:0;}
+@media (min-width:900px){
+  .looks figure:nth-child(2){margin-top:38px}
+  .looks figure:nth-child(3){margin-top:14px}
+  .looks figure:nth-child(4){margin-top:52px}
+}
+.looks a{display:block; text-decoration:none; background:var(--sheet); padding:11px 11px 0;}
+.looks img{width:100%; aspect-ratio:3/4; object-fit:cover;}
+.looks figcaption{font-family:var(--mono); font-size:10px; font-weight:700; letter-spacing:.16em;
+  text-transform:uppercase; color:var(--ink2); padding:10px 2px 12px; line-height:1.5;}
+.looks a:hover figcaption,.looks a:focus-visible figcaption{color:var(--deep);}
+
+/* ---------- ABOUT — sheet with the portrait breaking its edge ---------- */
+.about-sheet{position:relative;}
+@media (min-width:1000px){ .about-sheet{margin-right:10%;} }
+.about{display:grid; gap:30px;}
+@media (min-width:820px){ .about{grid-template-columns:minmax(0,260px) minmax(0,1fr); gap:52px;} }
+.about figure{margin:0;}
+.about figure img{width:100%; aspect-ratio:4/5; object-fit:cover;}
+@media (min-width:820px){
+  .about figure{margin-left:-92px; margin-top:-84px;}
+  .about figure img{border:11px solid var(--sheet);}
+}
+.about .big{font-family:var(--disp); font-size:clamp(24px,3vw,34px); line-height:1.25;
+  letter-spacing:-.015em; margin:0 0 18px; color:var(--ink);}
+.about p{margin:0 0 16px; font-size:16.5px; line-height:1.75; color:var(--ink2);}
+.about em{font-style:italic;}
+
+.socials{display:grid; gap:12px; margin-top:26px; padding-top:22px;
+  border-top:1px solid rgba(23,17,12,.2);}
+@media (min-width:620px){ .socials{grid-template-columns:repeat(3,minmax(0,1fr));} }
+.socials a{display:flex; align-items:center; gap:11px; text-decoration:none; min-height:46px;}
+.socials svg{width:21px; height:21px; flex:none; fill:none; stroke:var(--deep); stroke-width:1.5;}
+.socials .t{display:block; font-family:var(--mono); font-size:11.5px; font-weight:700;
+  letter-spacing:.12em; text-transform:uppercase; color:var(--ink);}
+.socials .s{display:block; font-family:var(--mono); font-size:10px; letter-spacing:.1em;
+  color:var(--ink2); margin-top:2px;}
+.socials a:hover .t,.socials a:focus-visible .t{color:var(--deep);}
+
+/* ---------- SUBSCRIBE — back on the flood, big ---------- */
+.subscribe{padding-top:96px; padding-bottom:96px;}
+.subscribe h2{font-family:var(--disp); font-weight:400; margin:16px 0 0; letter-spacing:-.025em;
+  font-size:clamp(34px,7vw,84px); line-height:1.03; max-width:16ch; color:var(--sheet);}
+.subscribe p{margin:20px 0 0; max-width:44ch;}
+.btn{display:inline-block; margin-top:30px; background:var(--sheet); color:var(--deep);
+  font-family:var(--mono); font-size:12px; font-weight:700; letter-spacing:.18em;
+  text-transform:uppercase; text-decoration:none; padding:17px 30px; min-height:48px;}
+.btn:hover,.btn:focus-visible{background:var(--onflood); color:var(--sheet);}
+
+/* ---------- FOOTER ---------- */
+footer{padding-top:40px; padding-bottom:44px; border-top:1px solid var(--rule);}
+.footgrid{display:grid; gap:28px;}
+@media (min-width:760px){ .footgrid{grid-template-columns:1.6fr 1fr 1fr; gap:40px;} }
+.footgrid .brand{font-family:var(--disp); font-size:21px; text-decoration:none;
+  display:inline-flex; align-items:center; gap:.26em; min-height:44px;}
+.footgrid .brand em{font-style:italic;}
+.footgrid p{margin:10px 0 0; max-width:34ch; font-size:15.5px;}
+.footgrid ul{list-style:none; margin:6px 0 0; padding:0;}
+.footgrid li a{font-family:var(--mono); font-size:11.5px; letter-spacing:.1em;
+  text-transform:uppercase; text-decoration:none; display:inline-flex; align-items:center;
+  min-height:44px; border-bottom:1px solid transparent;}
+.footgrid li a:hover,.footgrid li a:focus-visible{border-bottom-color:var(--onflood);}
+.fine{display:flex; flex-wrap:wrap; gap:10px 20px; justify-content:space-between;
+  margin-top:44px; padding-top:18px; border-top:1px solid var(--rule);}
+
+:focus-visible{outline:2px solid var(--onflood); outline-offset:3px;}
+.sheet :focus-visible{outline-color:var(--deep);}
+</style>
+</head>
+<body id="top">
+
+<div class="wrap topbar">
+  <a class="brand" href="#top">Zoe's <em>Collage</em></a>
+  <nav aria-label="Primary">
+    <a href="#top">Home</a>
+    <a href="#style">Style</a>
+    <a href="#writing">Writing</a>
+    <a href="#words">Words</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</div>
+
+<main>
+
+  <!-- ============ HERO — on the flood ============ -->
+  <section class="wrap hero">
+    <p class="label">Zoe Xu — stylist &amp; writer, Shanghai</p>
+    <h1 class="stanza">
+      <span class="l">I dress the way</span>
+      <span class="l i1">I write —</span>
+      <span class="l">layer, cut,</span>
+      <span class="l i2"><em>move the comma</em></span>
+      <span class="l i1">until it sounds right.</span>
+    </h1>
+
+    <div class="herogrid">
+      <div>
+        <p>
+          Six thousand readers on RedNote and more than twenty brand collaborations on one
+          side of the desk. Cannes, Berlin and the London Film Festival on the other. Both
+          are the same work: deciding what goes next to what.
+        </p>
+        <div class="linkrow">
+          <a class="txtlink" href="#style">See the looks</a>
+          <a class="txtlink" href="#writing">Read the writing</a>
+        </div>
+      </div>
+
+      <figure class="photosheet">
+        <img src="assets/photos/1.jpg" alt="White tee with white linen trousers, a brown scarf tied at the waist and an orange patent tote">
+        <figcaption>White linen,<br>orange tote</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============ WORDS — a sheet pushed right ============ -->
+  <div class="wrap">
+    <section class="sheet words-sheet" id="words">
+      <p class="label">Words — poems &amp; prose</p>
+      <blockquote class="pullquote">
+        <span class="l">“What fascinates me is creating layers</span>
+        <span class="l i1">with different shades of green —</span>
+        <span class="l">a sage trench coat, an olive green shirt,</span>
+        <span class="l i1">a tea green bag.”</span>
+        <span class="src">From <em>4 Doses of Style Inspo from Fall 2024 RTW</em></span>
+      </blockquote>
+
+      <div class="cols">
+        <p class="dropcap">
+          After two years of writing about other people's films, Zoe is turning the work
+          back on the sentence itself. Reviewing hands you an argument; a poem hands you
+          the line break, the rhythm, the question of which verb to use. She writes in
+          English, her second language, exploring identity, memory and emotion. Poems and
+          nonfiction prose are being written now and published as they are finished —
+          here, on Substack, and gradually gathered into a collection.
+        </p>
+        <p>
+          Until then, the film writing stays where it is: festival reports and reviews for
+          UK China Film Club in London, personal essays at <em>Zoe's Collage</em>. The first
+          Substack piece was on Justine Triet's <em>Anatomy of a Fall</em> and Yiyun Li's
+          <em>Where Reasons End</em>, back in 2023, and the habit never left.
+          <br><br>
+          <a class="txtlink" href="https://zoescollage.substack.com/" target="_blank" rel="noopener">Subscribe to Zoe's Collage</a>
+        </p>
+      </div>
+    </section>
+  </div>
+
+  <!-- ============ WRITING — stack of offset sheets ============ -->
+  <div class="wrap" id="writing">
+    <div class="sechead">
+      <h2>Writing</h2>
+      <span class="hr"></span>
+      <span class="label">Poem &amp; essays</span>
+    </div>
+
+    <div class="stack">
+      <a class="entry sheet" href="https://zoescollage.substack.com/p/aubade" target="_blank" rel="noopener">
+        <div class="top"><span class="n">i.</span><span class="label">Poem</span></div>
+        <h3>An Aubade</h3>
+        <span class="meta"><span class="film">New work</span> · Zoe's Collage</span>
+        <p>
+          <span class="verse">“The white ceiling<span class="slash">/</span>is all I have, I stare
+          at it,<span class="slash">/</span>trying to pin<span class="slash">/</span>you onto
+          it,<span class="slash">/</span>like Jesus on the cross.”</span> A dawn poem: a night
+          spent in silence, and the leaving that follows it.
+        </p>
+        <span class="go">Read the poem &rarr;</span>
+      </a>
+
+      <a class="entry sheet" href="https://zoescollage.substack.com/p/how-to-survive-cannes-and-its-disappointments" target="_blank" rel="noopener">
+        <div class="top"><span class="n">ii.</span><span class="label">Festival report</span></div>
+        <h3>How to survive Cannes and its disappointments</h3>
+        <span class="meta"><span class="film">Cannes 78</span> · Zoe's Collage</span>
+        <p>
+          <em>“Every May, Cannes becomes a temple for cinema, a place where cinephiles and the
+          whole film industry come to worship.”</em> Every title a world premiere, judged on a
+          poster and a synopsis; four films a day from half past eight in the morning until
+          one at night, on three espressos and an energy drink. A ranking that quietly parts
+          ways with the jury's.
+        </p>
+        <span class="go">Read the report &rarr;</span>
+      </a>
+
+      <a class="entry sheet" href="https://zoescollage.substack.com/p/its-time-to-talk-about-sean-baker" target="_blank" rel="noopener">
+        <div class="top"><span class="n">iii.</span><span class="label">Director essay</span></div>
+        <h3>It's Time to Talk About Sean Baker</h3>
+        <span class="meta"><span class="film">Anora</span> · Zoe's Collage</span>
+        <p>
+          Eight features in twenty-four years; a donut-shop quarrel between eight characters
+          shot on three iPhone 5s; two little girls running toward a theme park in the last
+          shot of <em>The Florida Project</em>. <em>“Sean Baker always ends the film somewhere
+          beyond your prediction — surprising, blunt, yet riveting.”</em>
+        </p>
+        <span class="go">Read the essay &rarr;</span>
+      </a>
+
+      <a class="entry sheet" href="https://zoescollage.substack.com/p/the-testament-of-ann-lee-a-sacred" target="_blank" rel="noopener">
+        <div class="top"><span class="n">iv.</span><span class="label">Review</span></div>
+        <h3>The Testament of Ann Lee</h3>
+        <span class="meta"><span class="film">Venice premiere</span> · Mona Fastvold</span>
+        <p>
+          A sacred elegy for a strong-willed, devout female leader — Manchester, 1758, and a
+          woman who becomes Mother Ann. After the storm, on deck: <em>“a powerful and sacred
+          dance… in the stillness of a post-storm morning hits hard with strong emotional
+          force.”</em> The film peaks there.
+        </p>
+        <span class="go">Read the review &rarr;</span>
+      </a>
+
+      <a class="entry sheet" href="https://zoescollage.substack.com/p/4-doses-of-style-inspo-from-fall" target="_blank" rel="noopener">
+        <div class="top"><span class="n">v.</span><span class="label">Fashion writing</span></div>
+        <h3>4 Doses of Style Inspo from Fall 2024 RTW</h3>
+        <span class="meta"><span class="film">Zoe's Collage</span> · Substack</span>
+        <p>
+          A whole spectrum of green — seaweed to olive to sage — swept the Fall 2024 runways
+          at Saint Laurent, Isabel Marant, Bottega Veneta and Loewe, and then swept her own
+          wardrobe. On the slit skirt, the flat cap, the half-moon bag, and one small hope:
+          <em>“Hope there will be spring in London.”</em>
+        </p>
+        <span class="go">Read on Substack &rarr;</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- ============ STYLE — on the flood, photos matted ============ -->
+  <div class="wrap" id="style">
+    <div class="sechead">
+      <h2>Style</h2>
+      <span class="hr"></span>
+      <span class="label">Lookbook</span>
+    </div>
+
+    <div class="style-intro">
+      <p class="lead">
+        The styling started in junior high, recreating Hollywood looks found on the
+        Chinese internet. The first brand wrote at three hundred followers.
+      </p>
+      <div>
+        <p>
+          More than twenty collaborations later, the method has not changed much: take one
+          sent piece, put it against something that shouldn't work, keep the palette narrow
+          and let a single object — a red flat, an orange tote, a pink net bag — do the
+          arguing. New looks go up on RedNote first.
+        </p>
+        <div class="linkrow">
+          <a class="txtlink" href="https://xhslink.cn/m/AUxfVD5HkNb" target="_blank" rel="noopener">RedNote 小红书</a>
+          <a class="txtlink" href="https://www.instagram.com/itszoecreation" target="_blank" rel="noopener">Instagram</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="looks">
+      <figure>
+        <a href="https://xhslink.cn/m/AUxfVD5HkNb" target="_blank" rel="noopener">
+          <img src="assets/photos/2.jpg" loading="lazy" decoding="async" alt="Oversized blue cotton shirt with red striped shorts, orange flip-flops and a leopard print bag">
+          <figcaption>Blue shirt,<br>red stripes</figcaption>
+        </a>
+      </figure>
+      <figure>
+        <a href="https://xhslink.cn/m/AUxfVD5HkNb" target="_blank" rel="noopener">
+          <img src="assets/photos/3.jpg" loading="lazy" decoding="async" alt="Sage utility jacket over white jeans with a red striped knit tied at the waist and red flats">
+          <figcaption>Sage jacket,<br>red flats</figcaption>
+        </a>
+      </figure>
+      <figure>
+        <a href="https://xhslink.cn/m/AUxfVD5HkNb" target="_blank" rel="noopener">
+          <img src="assets/photos/4.jpg" loading="lazy" decoding="async" alt="Long dark wool coat with a red and cream striped scarf, wide denim and a straw basket bag">
+          <figcaption>Dark coat,<br>striped scarf</figcaption>
+        </a>
+      </figure>
+      <figure>
+        <a href="https://xhslink.cn/m/AUxfVD5HkNb" target="_blank" rel="noopener">
+          <img src="assets/photos/5.jpg" loading="lazy" decoding="async" alt="Cream shaggy coat with a pink and red striped scarf, black denim and a grey leather bag">
+          <figcaption>Cream shearling,<br>striped scarf</figcaption>
+        </a>
+      </figure>
+    </div>
+  </div>
+
+  <!-- ============ ABOUT — sheet, portrait breaking the edge ============ -->
+  <div class="wrap" id="about">
+    <div class="sechead">
+      <h2>About</h2>
+      <span class="hr"></span>
+      <span class="label">Zoe Xu</span>
+    </div>
+
+    <section class="sheet about-sheet">
+      <div class="about">
+        <figure>
+          <img src="assets/photos/zoe-xu.jpg" loading="lazy" decoding="async" alt="Portrait of Zoe Xu">
+        </figure>
+        <div>
+          <p class="big">Zoe Xu is a stylist and writer living in Shanghai, by way of London.</p>
+          <p>
+            She has an MA in Film from Goldsmiths and an earlier MA in Management. Since 2024
+            she has written reviews, industry pieces and festival reports for UK China Film
+            Club — Berlin, Cannes, London — and interviewed actors and filmmakers for the same
+            masthead. Her Substack, <em>Zoe's Collage</em>, has run since 2023.
+          </p>
+          <p>
+            The styling runs alongside it and points somewhere specific: consultancy first,
+            then a shop, then a label of her own. Enquiries for styling consultation and brand
+            collaboration are welcome.
+          </p>
+
+          <div class="socials" id="contact">
+            <a href="https://xhslink.cn/m/AUxfVD5HkNb" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5h6.5a2 2 0 0 1 2 2V19a2 2 0 0 0-2-2H4z"/><path d="M20 5.5h-6.5a2 2 0 0 0-2 2V19a2 2 0 0 1 2-2H20z"/></svg>
+              <span><span class="t">RedNote</span><span class="s">小红书 · 6k readers</span></span>
+            </a>
+            <a href="https://www.instagram.com/itszoecreation" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/></svg>
+              <span><span class="t">Instagram</span><span class="s">@itszoecreation</span></span>
+            </a>
+            <a href="https://zoescollage.substack.com/" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 5.5h15M4.5 10h15M4.5 14.5l7.5 4 7.5-4v4.9l-7.5 4-7.5-4z"/></svg>
+              <span><span class="t">Substack</span><span class="s">Zoe's Collage</span></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ============ SUBSCRIBE ============ -->
+  <section class="wrap subscribe">
+    <p class="label">Zoe's Collage</p>
+    <h2>New poems, prose and film writing, sent when they are ready.</h2>
+    <p>No schedule, no filler — one letter at a time from Shanghai.</p>
+    <a class="btn" href="https://zoescollage.substack.com/" target="_blank" rel="noopener">Subscribe on Substack</a>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footgrid">
+      <div>
+        <a class="brand" href="#top">Zoe's <em>Collage</em></a>
+        <p>Style and the written word, kept in one place. Shanghai, 2026.</p>
+      </div>
+      <div>
+        <p class="label">Site</p>
+        <ul>
+          <li><a href="#style">Style</a></li>
+          <li><a href="#writing">Writing</a></li>
+          <li><a href="#words">Words</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="label">Elsewhere</p>
+        <ul>
+          <li><a href="https://xhslink.cn/m/AUxfVD5HkNb" target="_blank" rel="noopener">RedNote</a></li>
+          <li><a href="https://www.instagram.com/itszoecreation" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://zoescollage.substack.com/" target="_blank" rel="noopener">Substack</a></li>
+          <li><a href="https://www.ukchinafilm.com/zoe-xu/" target="_blank" rel="noopener">UK China Film Club</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="fine">
+      <span class="label">zoescollage.com</span>
+      <span class="label">© 2026 Zoe Xu</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
