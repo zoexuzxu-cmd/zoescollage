@@ -150,8 +150,9 @@ img{display:block; max-width:100%;}
 }
 .entry .n{font-family:var(--disp); font-style:italic; font-size:20px; color:var(--deep);}
 .entry .top{display:flex; align-items:baseline; gap:12px;}
-.entry h3{font-family:var(--disp); font-weight:400; margin:6px 0 0; letter-spacing:-.02em;
+.entry h4{font-family:var(--disp); font-weight:400; margin:6px 0 0; letter-spacing:-.02em;
   font-size:clamp(26px,4vw,46px); line-height:1.06;}
+.entry h4 em{font-style:italic;}
 .entry .meta{display:block; margin-top:12px; font-family:var(--mono); font-size:10.5px;
   font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--ink2);}
 .entry .meta .film{color:var(--deep);}
@@ -161,7 +162,24 @@ img{display:block; max-width:100%;}
   font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--deep);
   border-bottom:1.5px solid transparent; padding-bottom:2px;}
 .entry:hover .go,.entry:focus-visible .go{border-bottom-color:var(--deep);}
-.entry:hover h3,.entry:focus-visible h3{font-style:italic;}
+.entry:hover h4,.entry:focus-visible h4{font-style:italic;}
+
+/* ---------- labelled groups inside Writing ---------- */
+.group + .group{margin-top:72px;}
+.grouphead{
+  display:flex; align-items:baseline; gap:16px; flex-wrap:wrap;
+  margin:0 0 26px; font-weight:400;
+}
+.grouphead .gt{
+  font-family:var(--sans); font-weight:800; font-stretch:88%;
+  font-size:clamp(19px,2.8vw,30px); line-height:1; letter-spacing:-.02em;
+  text-transform:uppercase; color:var(--sheet);
+}
+.grouphead .hr{flex:1; min-width:24px; height:1px; background:rgba(255,255,255,.45);}
+.grouphead .gs{
+  font-family:var(--mono); font-size:10.5px; font-weight:700; letter-spacing:.18em;
+  text-transform:uppercase; color:var(--onflood); white-space:nowrap;
+}
 
 /* verse quoted inside an entry excerpt */
 .entry p .verse{font-style:italic; color:var(--ink);}
@@ -330,76 +348,121 @@ footer{padding-top:40px; padding-bottom:44px; border-top:1px solid var(--rule);}
     <div class="sechead">
       <h2>Writing</h2>
       <span class="hr"></span>
-      <span class="label">Poem &amp; essays</span>
+      <span class="label">Poems, essays &amp; journalism</span>
     </div>
 
-    <div class="stack">
-      <a class="entry sheet" href="https://zoescollage.substack.com/p/aubade" target="_blank" rel="noopener">
-        <div class="top"><span class="n">i.</span><span class="label">Poem</span></div>
-        <h3>An Aubade</h3>
-        <span class="meta"><span class="film">New work</span> · Zoe's Collage</span>
-        <p>
-          <span class="verse">“The white ceiling<span class="slash">/</span>is all I have, I stare
-          at it,<span class="slash">/</span>trying to pin<span class="slash">/</span>you onto
-          it,<span class="slash">/</span>like Jesus on the cross.”</span> A dawn poem: a night
-          spent in silence, and the leaving that follows it.
-        </p>
-        <span class="go">Read the poem &rarr;</span>
-      </a>
+    <!-- ---- group 1: her own Substack ---- -->
+    <section class="group">
+      <h3 class="grouphead">
+        <span class="gt">Zoe's Collage</span>
+        <span class="hr"></span>
+        <span class="gs">Published on my Substack</span>
+      </h3>
 
-      <a class="entry sheet" href="https://zoescollage.substack.com/p/how-to-survive-cannes-and-its-disappointments" target="_blank" rel="noopener">
-        <div class="top"><span class="n">ii.</span><span class="label">Festival report</span></div>
-        <h3>How to survive Cannes and its disappointments</h3>
-        <span class="meta"><span class="film">Cannes 78</span> · Zoe's Collage</span>
-        <p>
-          <em>“Every May, Cannes becomes a temple for cinema, a place where cinephiles and the
-          whole film industry come to worship.”</em> Every title a world premiere, judged on a
-          poster and a synopsis; four films a day from half past eight in the morning until
-          one at night, on three espressos and an energy drink. A ranking that quietly parts
-          ways with the jury's.
-        </p>
-        <span class="go">Read the report &rarr;</span>
-      </a>
+      <div class="stack">
+        <a class="entry sheet" href="https://zoescollage.substack.com/p/aubade" target="_blank" rel="noopener">
+          <div class="top"><span class="n">i.</span><span class="label">Poem</span></div>
+          <h4>An Aubade</h4>
+          <span class="meta"><span class="film">Zoe's Collage</span> · Substack</span>
+          <p>
+            <span class="verse">“The white ceiling<span class="slash">/</span>is all I have, I stare
+            at it,<span class="slash">/</span>trying to pin<span class="slash">/</span>you onto
+            it,<span class="slash">/</span>like Jesus on the cross.”</span> A dawn poem: a night
+            spent in silence, and the leaving that follows it.
+          </p>
+          <span class="go">Read the poem &rarr;</span>
+        </a>
 
-      <a class="entry sheet" href="https://zoescollage.substack.com/p/its-time-to-talk-about-sean-baker" target="_blank" rel="noopener">
-        <div class="top"><span class="n">iii.</span><span class="label">Director essay</span></div>
-        <h3>It's Time to Talk About Sean Baker</h3>
-        <span class="meta"><span class="film">Anora</span> · Zoe's Collage</span>
-        <p>
-          Eight features in twenty-four years; a donut-shop quarrel between eight characters
-          shot on three iPhone 5s; two little girls running toward a theme park in the last
-          shot of <em>The Florida Project</em>. <em>“Sean Baker always ends the film somewhere
-          beyond your prediction — surprising, blunt, yet riveting.”</em>
-        </p>
-        <span class="go">Read the essay &rarr;</span>
-      </a>
+        <a class="entry sheet" href="https://zoescollage.substack.com/p/moments-diary" target="_blank" rel="noopener">
+          <div class="top"><span class="n">ii.</span><span class="label">Prose</span></div>
+          <h4>Moments Diary</h4>
+          <span class="meta"><span class="film">Practice paying attention</span> · Substack</span>
+          <p>
+            Diary entries from one summer, kept as an exercise in noticing.
+            <em>“I made sure there was no space between my body and the seat as if the closer
+            I pressed myself, the safer I was.”</em> Cicadas, homesickness, and the texture of
+            an ordinary afternoon: <em>“I miss where I come from.”</em>
+          </p>
+          <span class="go">Read the diary &rarr;</span>
+        </a>
 
-      <a class="entry sheet" href="https://zoescollage.substack.com/p/the-testament-of-ann-lee-a-sacred" target="_blank" rel="noopener">
-        <div class="top"><span class="n">iv.</span><span class="label">Review</span></div>
-        <h3>The Testament of Ann Lee</h3>
-        <span class="meta"><span class="film">Venice premiere</span> · Mona Fastvold</span>
-        <p>
-          A sacred elegy for a strong-willed, devout female leader — Manchester, 1758, and a
-          woman who becomes Mother Ann. After the storm, on deck: <em>“a powerful and sacred
-          dance… in the stillness of a post-storm morning hits hard with strong emotional
-          force.”</em> The film peaks there.
-        </p>
-        <span class="go">Read the review &rarr;</span>
-      </a>
+        <a class="entry sheet" href="https://zoescollage.substack.com/p/its-time-to-talk-about-sean-baker" target="_blank" rel="noopener">
+          <div class="top"><span class="n">iii.</span><span class="label">Director essay</span></div>
+          <h4>It's Time to Talk About Sean Baker</h4>
+          <span class="meta"><span class="film">Anora</span> · Substack</span>
+          <p>
+            Eight features in twenty-four years; a donut-shop quarrel between eight characters
+            shot on three iPhone 5s; two little girls running toward a theme park in the last
+            shot of <em>The Florida Project</em>. <em>“Sean Baker always ends the film somewhere
+            beyond your prediction — surprising, blunt, yet riveting.”</em>
+          </p>
+          <span class="go">Read the essay &rarr;</span>
+        </a>
 
-      <a class="entry sheet" href="https://zoescollage.substack.com/p/4-doses-of-style-inspo-from-fall" target="_blank" rel="noopener">
-        <div class="top"><span class="n">v.</span><span class="label">Fashion writing</span></div>
-        <h3>4 Doses of Style Inspo from Fall 2024 RTW</h3>
-        <span class="meta"><span class="film">Zoe's Collage</span> · Substack</span>
-        <p>
-          A whole spectrum of green — seaweed to olive to sage — swept the Fall 2024 runways
-          at Saint Laurent, Isabel Marant, Bottega Veneta and Loewe, and then swept her own
-          wardrobe. On the slit skirt, the flat cap, the half-moon bag, and one small hope:
-          <em>“Hope there will be spring in London.”</em>
-        </p>
-        <span class="go">Read on Substack &rarr;</span>
-      </a>
-    </div>
+        <a class="entry sheet" href="https://zoescollage.substack.com/p/4-doses-of-style-inspo-from-fall" target="_blank" rel="noopener">
+          <div class="top"><span class="n">iv.</span><span class="label">Fashion writing</span></div>
+          <h4>4 Doses of Style Inspo from Fall 2024 RTW</h4>
+          <span class="meta"><span class="film">Runway</span> · Substack</span>
+          <p>
+            A whole spectrum of green — seaweed to olive to sage — swept the Fall 2024 runways
+            at Saint Laurent, Isabel Marant, Bottega Veneta and Loewe, and then swept her own
+            wardrobe. On the slit skirt, the flat cap, the half-moon bag, and one small hope:
+            <em>“Hope there will be spring in London.”</em>
+          </p>
+          <span class="go">Read on Substack &rarr;</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ---- group 2: written for other outlets ---- -->
+    <section class="group">
+      <h3 class="grouphead">
+        <span class="gt">Film journalism</span>
+        <span class="hr"></span>
+        <span class="gs">Written for other outlets</span>
+      </h3>
+
+      <div class="stack">
+        <a class="entry sheet" href="https://privatewaves.com/the-testament-of-ann-lee-a-sacred-elegy-for-a-strong-willed-devout-female-leader/" target="_blank" rel="noopener">
+          <div class="top"><span class="n">i.</span><span class="label">Review</span></div>
+          <h4>The Testament of Ann Lee</h4>
+          <span class="meta"><span class="film">Private Waves</span> · Mona Fastvold</span>
+          <p>
+            A sacred elegy for a strong-willed, devout female leader — Manchester, 1758, and a
+            woman who becomes Mother Ann. <em>“Suffering, then reborn, the anguish in the
+            woman's body and mind is healed by her worship of God.”</em> On the Shakers, and
+            what survives of them: <em>“At a certain point, we all become one of them.”</em>
+          </p>
+          <span class="go">Read the review &rarr;</span>
+        </a>
+
+        <a class="entry sheet" href="https://www.ukchinafilm.com/kevin-lee-dongji-island/" target="_blank" rel="noopener">
+          <div class="top"><span class="n">ii.</span><span class="label">Interview</span></div>
+          <h4>Kevin Lee on <em>Dongji Island</em></h4>
+          <span class="meta"><span class="film">UK China Film Club</span> · Exclusive</span>
+          <p>
+            The British actor on fourteen years in China, on being cast as the villain by
+            Jackie Chan, Zhang Yimou and Wu Jing, and on finally playing the hero.
+            <em>“I really didn't want to do it. But I've learned: never refuse a casting.
+            You just don't know what the movie is.”</em>
+          </p>
+          <span class="go">Read the interview &rarr;</span>
+        </a>
+
+        <a class="entry sheet" href="https://privatewaves.com/best-of-cannes-2025-5-must-see-films-from-competition-selections/" target="_blank" rel="noopener">
+          <div class="top"><span class="n">iii.</span><span class="label">Festival report</span></div>
+          <h4>Best of Cannes 2025</h4>
+          <span class="meta"><span class="film">Private Waves</span> · Competition</span>
+          <p>
+            Five must-see films from the Competition selection — Kelly Reichardt, Óliver Laxe,
+            Julia Ducournau, Joachim Trier and Jafar Panahi. On <em>The Mastermind</em>:
+            <em>“Reichardt tells the story through editing and imagery rather than dialogue,
+            and once again she surprises us with her command of austere filmmaking.”</em>
+          </p>
+          <span class="go">Read the report &rarr;</span>
+        </a>
+      </div>
+    </section>
   </div>
 
   <!-- ============ STYLE — on the flood, photos matted ============ -->
