@@ -139,8 +139,11 @@ img{display:block; max-width:100%;}
 .sechead .label{white-space:nowrap;}
 
 /* ---------- WRITING — a stack of offset sheets ---------- */
-.stack{display:flex; flex-direction:column; gap:22px;}
+.stack{display:flex; flex-direction:column; gap:14px;}
 .entry{display:block; text-decoration:none;}
+/* writing cards sit tighter than the feature sheets (Words, About) */
+.entry.sheet{padding:22px 20px;}
+@media (min-width:900px){ .entry.sheet{padding:26px 30px;} }
 @media (min-width:1000px){
   .entry:nth-child(1){width:88%;}
   .entry:nth-child(2){width:82%; margin-left:18%;}
@@ -150,30 +153,30 @@ img{display:block; max-width:100%;}
 }
 .entry .n{font-family:var(--disp); font-style:italic; font-size:20px; color:var(--deep);}
 .entry .top{display:flex; align-items:baseline; gap:12px;}
-.entry h4{font-family:var(--disp); font-weight:400; margin:6px 0 0; letter-spacing:-.02em;
-  font-size:clamp(26px,4vw,46px); line-height:1.06;}
+.entry h4{font-family:var(--disp); font-weight:400; margin:5px 0 0; letter-spacing:-.02em;
+  font-size:clamp(22px,2.6vw,30px); line-height:1.1;}
 .entry h4 em{font-style:italic;}
-.entry .meta{display:block; margin-top:12px; font-family:var(--mono); font-size:10.5px;
+.entry .meta{display:block; margin-top:9px; font-family:var(--mono); font-size:10px;
   font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--ink2);}
 .entry .meta .film{color:var(--deep);}
-.entry p{margin:16px 0 0; font-size:16.5px; line-height:1.75; color:var(--ink2); max-width:62ch;}
+.entry p{margin:11px 0 0; font-size:15.5px; line-height:1.55; color:var(--ink2); max-width:54ch;}
 .entry p em{font-style:italic; color:var(--ink);}
-.entry .go{display:inline-block; margin-top:18px; font-family:var(--mono); font-size:11px;
+.entry .go{display:inline-block; margin-top:14px; font-family:var(--mono); font-size:11px;
   font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--deep);
   border-bottom:1.5px solid transparent; padding-bottom:2px;}
 .entry:hover .go,.entry:focus-visible .go{border-bottom-color:var(--deep);}
 .entry:hover h4,.entry:focus-visible h4{font-style:italic;}
 
 /* ---------- labelled groups inside Writing ---------- */
-.group + .group{margin-top:72px;}
+.group + .group{margin-top:54px;}
 .grouphead{
   display:flex; align-items:baseline; gap:16px; flex-wrap:wrap;
   margin:0 0 26px; font-weight:400;
 }
 .grouphead .gt{
-  font-family:var(--sans); font-weight:800; font-stretch:88%;
-  font-size:clamp(19px,2.8vw,30px); line-height:1; letter-spacing:-.02em;
-  text-transform:uppercase; color:var(--sheet);
+  font-family:var(--mono); font-weight:700;
+  font-size:clamp(14px,1.7vw,18px); line-height:1.2; letter-spacing:.14em;
+  text-transform:uppercase; color:var(--onflood);
 }
 .grouphead .hr{flex:1; min-width:24px; height:1px; background:rgba(255,255,255,.45);}
 .grouphead .gs{
@@ -188,17 +191,29 @@ img{display:block; max-width:100%;}
 /* ---------- STYLE — text on the flood, photos matted ---------- */
 .style-intro{display:grid; gap:26px;}
 @media (min-width:900px){ .style-intro{grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:56px;} }
-.style-intro .lead{font-size:21px; line-height:1.65; margin:0; max-width:26ch;
+.style-intro .lead{font-size:21px; line-height:1.6; margin:0; max-width:46ch;
   font-family:var(--disp); letter-spacing:-.01em;}
 .style-intro p{margin:0; max-width:48ch;}
 
 .looks{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; margin-top:44px;}
-@media (min-width:900px){ .looks{grid-template-columns:repeat(4,minmax(0,1fr)); gap:22px;} }
-.looks figure{margin:0;}
+/* phones: the two lead plates run full width, the rest pair up */
+.looks figure:nth-child(1),
+.looks figure:nth-child(2){grid-column:span 2;}
+/* desktop: a 6-column editorial grid — two large plates, then two rows of three */
 @media (min-width:900px){
-  .looks figure:nth-child(2){margin-top:38px}
-  .looks figure:nth-child(3){margin-top:14px}
-  .looks figure:nth-child(4){margin-top:52px}
+  .looks{grid-template-columns:repeat(6,minmax(0,1fr)); gap:22px;}
+  .looks figure:nth-child(1),
+  .looks figure:nth-child(2){grid-column:span 3;}
+  .looks figure:nth-child(n+3){grid-column:span 2;}
+}
+.looks figure{margin:0;}
+/* a small vertical stagger so the plates read as pinned, not tiled */
+@media (min-width:900px){
+  .looks figure:nth-child(2){margin-top:40px}
+  .looks figure:nth-child(4){margin-top:26px}
+  .looks figure:nth-child(5){margin-top:12px}
+  .looks figure:nth-child(7){margin-top:34px}
+  .looks figure:nth-child(8){margin-top:16px}
 }
 .looks a{display:block; text-decoration:none; background:var(--sheet); padding:11px 11px 0;}
 .looks img{width:100%; aspect-ratio:3/4; object-fit:cover;}
@@ -224,7 +239,7 @@ img{display:block; max-width:100%;}
 
 .socials{display:grid; gap:12px; margin-top:26px; padding-top:22px;
   border-top:1px solid rgba(23,17,12,.2);}
-@media (min-width:620px){ .socials{grid-template-columns:repeat(3,minmax(0,1fr));} }
+@media (min-width:620px){ .socials{grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px 20px;} }
 .socials a{display:flex; align-items:center; gap:11px; text-decoration:none; min-height:46px;}
 .socials svg{width:21px; height:21px; flex:none; fill:none; stroke:var(--deep); stroke-width:1.5;}
 .socials .t{display:block; font-family:var(--mono); font-size:11.5px; font-weight:700;
@@ -292,14 +307,9 @@ footer{padding-top:40px; padding-bottom:44px; border-top:1px solid var(--rule);}
 
     <div class="herogrid">
       <div>
-        <p>
-          Six thousand readers on RedNote and more than twenty brand collaborations on one
-          side of the desk. Cannes, Berlin and the London Film Festival on the other. Both
-          are the same work: deciding what goes next to what.
-        </p>
         <div class="linkrow">
-          <a class="txtlink" href="#style">See the looks</a>
-          <a class="txtlink" href="#writing">Read the writing</a>
+          <a class="txtlink" href="#style">The looks</a>
+          <a class="txtlink" href="#writing">The writing</a>
         </div>
       </div>
 
@@ -324,18 +334,19 @@ footer{padding-top:40px; padding-bottom:44px; border-top:1px solid var(--rule);}
 
       <div class="cols">
         <p class="dropcap">
-          After two years of writing about other people's films, Zoe is turning the work
-          back on the sentence itself. Reviewing hands you an argument; a poem hands you
-          the line break, the rhythm, the question of which verb to use. She writes in
-          English, her second language, exploring identity, memory and emotion. Poems and
-          nonfiction prose are being written now and published as they are finished —
-          here, on Substack, and gradually gathered into a collection.
+          I spent two years writing about other people's films. Now I'm more interested in
+          the words themselves. Film reviewing leaves very little room to be creative.
+          <br><br>
+          I write in English, my second language, about identity, memory, and what it means
+          to live between places. More than that, I yearn to create something no one has
+          written before — in a language I'm less familiar with, where unfamiliarity itself
+          forces precision and discovery.
         </p>
         <p>
-          Until then, the film writing stays where it is: festival reports and reviews for
-          UK China Film Club in London, personal essays at <em>Zoe's Collage</em>. The first
-          Substack piece was on Justine Triet's <em>Anatomy of a Fall</em> and Yiyun Li's
-          <em>Where Reasons End</em>, back in 2023, and the habit never left.
+          You can find my festival reports and film reviews on UK China Film Club and
+          Private Waves. My personal essays are on my Substack. My first Substack piece was
+          about Justine Triet's <em>Anatomy of a Fall</em> and Yiyun Li's
+          <em>Where Reasons End</em>, in 2023. I haven't stopped since.
           <br><br>
           <a class="txtlink" href="https://zoescollage.substack.com/" target="_blank" rel="noopener">Subscribe to Zoe's Collage</a>
         </p>
@@ -475,15 +486,18 @@ footer{padding-top:40px; padding-bottom:44px; border-top:1px solid var(--rule);}
 
     <div class="style-intro">
       <p class="lead">
-        The styling started in junior high, recreating Hollywood looks found on the
-        Chinese internet. The first brand wrote at three hundred followers.
+        I started styling in junior high, in a small northeastern city, recreating
+        Hollywood looks I found on the Chinese internet. The first brand contacted me
+        when I had three hundred followers on RedNote.
       </p>
       <div>
         <p>
-          More than twenty collaborations later, the method has not changed much: take one
-          sent piece, put it against something that shouldn't work, keep the palette narrow
-          and let a single object — a red flat, an orange tote, a pink net bag — do the
-          arguing. New looks go up on RedNote first.
+          Twenty-something collaborations later, my style has become clearer to me. I use
+          pops of colour to elevate a minimalist outfit. The styling process itself is what
+          I enjoy most, brainstorming how to build five different looks from one raglan
+          t-shirt. I love how one small detail of a garment can change the whole message.
+          And I want to be able to express who I am in different registers, whether sexy or
+          intellectual. New looks go up on RedNote first.
         </p>
         <div class="linkrow">
           <a class="txtlink" href="https://xhslink.cn/m/AUxfVD5HkNb" target="_blank" rel="noopener">RedNote 小红书</a>
@@ -493,6 +507,18 @@ footer{padding-top:40px; padding-bottom:44px; border-top:1px solid var(--rule);}
     </div>
 
     <div class="looks">
+      <figure>
+        <a href="https://xhslink.cn/m/AUxfVD5HkNb" target="_blank" rel="noopener">
+          <img src="assets/photos/6.jpg" loading="lazy" decoding="async" alt="Leopard print longline coat over black jeans with a pink net bag and black mary janes">
+          <figcaption>Leopard coat,<br>pink net bag</figcaption>
+        </a>
+      </figure>
+      <figure>
+        <a href="https://xhslink.cn/m/AUxfVD5HkNb" target="_blank" rel="noopener">
+          <img src="assets/photos/7.jpg" loading="lazy" decoding="async" alt="Black sleeveless mini dress with a tan baseball cap, white crew socks and white Converse">
+          <figcaption>Black mini,<br>white Converse</figcaption>
+        </a>
+      </figure>
       <figure>
         <a href="https://xhslink.cn/m/AUxfVD5HkNb" target="_blank" rel="noopener">
           <img src="assets/photos/2.jpg" loading="lazy" decoding="async" alt="Oversized blue cotton shirt with red striped shorts, orange flip-flops and a leopard print bag">
@@ -507,8 +533,20 @@ footer{padding-top:40px; padding-bottom:44px; border-top:1px solid var(--rule);}
       </figure>
       <figure>
         <a href="https://xhslink.cn/m/AUxfVD5HkNb" target="_blank" rel="noopener">
+          <img src="assets/photos/8.jpg" loading="lazy" decoding="async" alt="Black patent jacket over a pink lace camisole with light blue jeans and black mary janes">
+          <figcaption>Patent black,<br>pink lace</figcaption>
+        </a>
+      </figure>
+      <figure>
+        <a href="https://xhslink.cn/m/AUxfVD5HkNb" target="_blank" rel="noopener">
           <img src="assets/photos/4.jpg" loading="lazy" decoding="async" alt="Long dark wool coat with a red and cream striped scarf, wide denim and a straw basket bag">
           <figcaption>Dark coat,<br>striped scarf</figcaption>
+        </a>
+      </figure>
+      <figure>
+        <a href="https://xhslink.cn/m/AUxfVD5HkNb" target="_blank" rel="noopener">
+          <img src="assets/photos/9.jpg" loading="lazy" decoding="async" alt="Brown shearling aviator jacket with a leopard print hood, dark denim and black loafers">
+          <figcaption>Shearling,<br>leopard hood</figcaption>
         </a>
       </figure>
       <figure>
@@ -534,17 +572,15 @@ footer{padding-top:40px; padding-bottom:44px; border-top:1px solid var(--rule);}
           <img src="assets/photos/zoe-xu.jpg" loading="lazy" decoding="async" alt="Portrait of Zoe Xu">
         </figure>
         <div>
-          <p class="big">Zoe Xu is a stylist and writer living in Shanghai, by way of London.</p>
+          <p class="big">Zoe Xu is a stylist and writer based in Shanghai, previously London.</p>
           <p>
             She has an MA in Film from Goldsmiths and an earlier MA in Management. Since 2024
             she has written reviews, industry pieces and festival reports for UK China Film
-            Club — Berlin, Cannes, London — and interviewed actors and filmmakers for the same
-            masthead. Her Substack, <em>Zoe's Collage</em>, has run since 2023.
+            Club, covering Berlin, Cannes and London, and interviewed actors and filmmakers.
+            Her Substack, <em>Zoe's Collage</em>, has run since 2023.
           </p>
           <p>
-            The styling runs alongside it and points somewhere specific: consultancy first,
-            then a shop, then a label of her own. Enquiries for styling consultation and brand
-            collaboration are welcome.
+            She is currently available for styling consultation and brand collaboration.
           </p>
 
           <div class="socials" id="contact">
@@ -560,6 +596,10 @@ footer{padding-top:40px; padding-bottom:44px; border-top:1px solid var(--rule);}
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 5.5h15M4.5 10h15M4.5 14.5l7.5 4 7.5-4v4.9l-7.5 4-7.5-4z"/></svg>
               <span><span class="t">Substack</span><span class="s">Zoe's Collage</span></span>
             </a>
+            <a class="mail" href="#" data-u="zoexuzxu" data-d="gmail.com">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="1.5"/><path d="M3.7 6.7 12 12.9l8.3-6.2"/></svg>
+              <span><span class="t">Email</span><span class="s">Styling &amp; collaborations</span></span>
+            </a>
           </div>
         </div>
       </div>
@@ -569,8 +609,8 @@ footer{padding-top:40px; padding-bottom:44px; border-top:1px solid var(--rule);}
   <!-- ============ SUBSCRIBE ============ -->
   <section class="wrap subscribe">
     <p class="label">Zoe's Collage</p>
-    <h2>New poems, prose and film writing, sent when they are ready.</h2>
-    <p>No schedule, no filler — one letter at a time from Shanghai.</p>
+    <h2>New poems, prose and film reviews.</h2>
+    <p>I send them when they're finished.</p>
     <a class="btn" href="https://zoescollage.substack.com/" target="_blank" rel="noopener">Subscribe on Substack</a>
   </section>
 
@@ -581,7 +621,7 @@ footer{padding-top:40px; padding-bottom:44px; border-top:1px solid var(--rule);}
     <div class="footgrid">
       <div>
         <a class="brand" href="#top">Zoe's <em>Collage</em></a>
-        <p>Style and the written word, kept in one place. Shanghai, 2026.</p>
+        <p>Style and words, kept in one place. Shanghai, 2026.</p>
       </div>
       <div>
         <p class="label">Site</p>
@@ -608,6 +648,23 @@ footer{padding-top:40px; padding-bottom:44px; border-top:1px solid var(--rule);}
     </div>
   </div>
 </footer>
+
+<script>
+/* The address is assembled at runtime from two halves, so it never appears
+   as a scrapable string in the served HTML. Falls back to a readable
+   "name at domain" label if scripting is unavailable. */
+(function(){
+  document.querySelectorAll('a.mail').forEach(function(a){
+    var u=a.getAttribute('data-u'), d=a.getAttribute('data-d');
+    if(!u||!d) return;
+    a.setAttribute('href','mailto:'+u+'@'+d);
+    a.removeAttribute('data-u'); a.removeAttribute('data-d');
+  });
+})();
+</script>
+<noscript>
+  <style>.socials a.mail .s::after{content:" — zoexuzxu at gmail dot com";}</style>
+</noscript>
 
 </body>
 </html>
